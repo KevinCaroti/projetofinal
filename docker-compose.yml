@@ -1,0 +1,26 @@
+services:
+  projetofinal:
+    image: ${DOCKER_REGISTRY-}projetofinal
+    build:
+      context: .
+      dockerfile: projetofinal/Dockerfile
+    depends_on:
+        - sqlserver
+    networks:
+        - minharede
+    ports:
+        - "5000:8080"
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver_container
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourStrong@Passw0rd
+      - MSSQL_PID=Developer
+    ports:
+      - "8002:1433"
+    networks:
+      - minharede
+networks:
+  minharede:
+    driver:  bridge
