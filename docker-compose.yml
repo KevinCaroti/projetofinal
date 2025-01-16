@@ -4,6 +4,8 @@ services:
     build:
       context: .
       dockerfile: projetofinal/Dockerfile
+    environment:
+        - ConnectionStrings__DefaultConnection=Server=sqlserver_container;Database=projetofinaldb;User Id=sa;Password=YourStrong@Passw0rd;Trust Server Certificate=True;
     depends_on:
         - sqlserver
     networks:
@@ -17,10 +19,19 @@ services:
       - ACCEPT_EULA=Y
       - SA_PASSWORD=YourStrong@Passw0rd
       - MSSQL_PID=Developer
+
     ports:
       - "8002:1433"
     networks:
       - minharede
+    restart: unless-stopped
+    volumes:
+      - dbvolumeprojetofinal:/var/opt/mssql
 networks:
   minharede:
     driver:  bridge
+
+volumes:
+  dbvolumeprojetofinal:
+
+    
