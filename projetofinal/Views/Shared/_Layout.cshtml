@@ -10,9 +10,36 @@
 </head>
 <body>
     <header>
+        <!-- Novo cabeçalho personalizado -->
+        <div class="custom-header">
+            <div class="custom-logo">
+                <img src="logo.png" alt="Logo"> <!-- Substitua pelo seu logo -->
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="wook procuras?" >
+            </div>
+            <div class="custom-icons">
+                <img src="user-icon.png" alt="Usuário"> <!-- Substitua pelos ícones corretos -->
+                <img src="heart-icon.png" alt="Favoritos">
+                <img src="cart-icon.png" alt="Carrinho">
+            </div>
+        </div>
+
+        <!-- Código original do projeto -->
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">projetofinal</a>
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><button class="dropdown-item" type="button">Action</button></li>
+                        <li><button class="dropdown-item" type="button">Another action</button></li>
+                        <li><button class="dropdown-item" type="button">Something else here</button></li>
+                    </ul>
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

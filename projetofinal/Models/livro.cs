@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 
 namespace projetofinal.Models
@@ -45,4 +46,3 @@ namespace projetofinal.Models
         public string Estado { get; set; } = "Pendente"; // Estado da encomenda: Pendente ou Satisfeita
     }
 }
-
