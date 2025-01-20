@@ -14,6 +14,11 @@ html {
 body {
     margin-bottom: 60px;
     background-color: lightgrey;
+    margin-top: 5%;
+}
+
+footer{
+    background: white;
 }
 
 .btnp {
@@ -130,6 +135,14 @@ h3, button, p {
     max-width: 1920px;
 }
 
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
 .custom-header {
     background-color: #e6e8ff;
     padding: 10px 20px;
@@ -187,6 +200,13 @@ h3, button, p {
     margin-bottom: 5px;
 }
 
+.dropdown-item {
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    height: 100%;
+}
+
 .dropdown:hover{
     background: none;
 }
@@ -196,3 +216,66 @@ h3, button, p {
     font-size: 18px; 
     color: #333; 
 }
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #b28cd9;
+    padding: 20px;
+    color: white;
+    height: 400px;
+    margin-top: 50px;
+    margin-left: 13%;
+    margin-bottom: 50px;
+    width: 75%;
+}
+
+.text-content {
+    max-width: 50%;
+    padding-left: 30px;
+}
+
+    .text-content h1 {
+        font-size: 40px;
+        margin: 0;
+        color: #fdbcc4;
+    }
+
+    .text-content h2 {
+        font-size: 50px;
+        font-weight: normal;
+        margin: 10px 0;
+        line-height: 1.2;
+        color: white;
+    }
+
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+    .cta-button:hover {
+        background-color: white;
+        color: #b28cd9;
+    }
+
+.image-content {
+    max-width: 40%;
+    text-align: right;
+    margin-right: 150px;
+}
+
+    .image-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        width: 300px;
+    }

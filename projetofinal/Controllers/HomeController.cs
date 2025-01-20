@@ -28,5 +28,17 @@ namespace projetofinal.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult Search(string query)
+        {
+            if (string.IsNullOrEmpty(query))
+            {
+                return View("SearchResults", new List<string>()); // Exibe resultados vazios
+            }
+
+            // Simulando resultados
+            var results = new List<string> { "Resultado 1", "Resultado 2", "Resultado 3" };
+            return View("SearchResults", results);
+        }
     }
 }
