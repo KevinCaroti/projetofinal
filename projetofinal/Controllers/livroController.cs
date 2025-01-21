@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using projetofinal.Data;
 using projetofinal.Models;
 using System.Linq;
@@ -13,10 +14,11 @@ namespace projetofinal.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var livros = _context.Livros.ToList(); // Obtem dados da tabela Livros
-            return View();
+            var livros = await _context.Livros.ToListAsync();  // Obtém a lista de livros
+            return View(livros);  // Envia os livros para a View
         }
+
     }
 }

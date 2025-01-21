@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using projetofinal.Data;
 
@@ -11,9 +12,11 @@ using projetofinal.Data;
 namespace projetofinal.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250121000346_Quatro")]
+    partial class Quatro
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -252,24 +255,6 @@ namespace projetofinal.Data.Migrations
                     b.HasIndex("LivroId");
 
                     b.ToTable("Encomendas");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Estado = "Pendente",
-                            LivroId = 1,
-                            MoradaEnvio = "Rua das Flores, 123, Lisboa",
-                            NomeUtilizador = "João Silva"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Estado = "Satisfeita",
-                            LivroId = 2,
-                            MoradaEnvio = "Avenida Paulista, 456, São Paulo",
-                            NomeUtilizador = "Maria Santos"
-                        });
                 });
 
             modelBuilder.Entity("projetofinal.Models.livro", b =>
@@ -322,50 +307,6 @@ namespace projetofinal.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Livros");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Autor = "J.R.R. Tolkien",
-                            Dimensao = "23x15 cm",
-                            Disponivel = true,
-                            Editora = "HarperCollins",
-                            ISBN = "978-84-670-6004-2",
-                            Idioma = "Português",
-                            Nome = "O Senhor dos Anéis",
-                            Preco = 39.99m,
-                            Sinopse = "Uma jornada épica na Terra Média.",
-                            Tema = "Fantasia"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Autor = "George Orwell",
-                            Dimensao = "21x14 cm",
-                            Disponivel = true,
-                            Editora = "Companhia das Letras",
-                            ISBN = "978-85-359-0277-4",
-                            Idioma = "Português",
-                            Nome = "1984",
-                            Preco = 25.50m,
-                            Sinopse = "Uma distopia sobre um futuro totalitário.",
-                            Tema = "Ficção Científica"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Autor = "Miguel de Cervantes",
-                            Dimensao = "22x14 cm",
-                            Disponivel = false,
-                            Editora = "Penguin",
-                            ISBN = "978-85-010-0000-0",
-                            Idioma = "Português",
-                            Nome = "Dom Quixote",
-                            Preco = 30.00m,
-                            Sinopse = "As aventuras do cavaleiro da triste figura.",
-                            Tema = "Clássico"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
