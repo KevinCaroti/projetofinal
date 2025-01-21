@@ -24,6 +24,7 @@ namespace projetofinal.Models
         public required string Tema { get; set; }
         public required string Dimensao { get; set; }
         public bool Disponivel { get; set; }
+
     }
     public class Encomenda
     {
@@ -34,7 +35,7 @@ namespace projetofinal.Models
         public int LivroId { get; set; }
 
         [ForeignKey("LivroId")]
-        public required livro livro { get; set; } // Relacionamento com o modelo Livro
+        public livro livro { get; set; } // Relacionamento com o modelo Livro
 
         [Required]
         public required string NomeUtilizador { get; set; }

@@ -12,9 +12,10 @@ namespace projetofinal.Controllers
         {
             _logger = logger;
         }
-
+        
         public IActionResult Index()
         {
+
             return View();
         }
 
